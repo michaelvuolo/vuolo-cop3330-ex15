@@ -12,20 +12,17 @@ public class exercise {
         // create new scanner
         Scanner input = new Scanner(System.in);
 
-        // record values
-        System.out.print("What is the order amount? ");
-        double order_amount = Double.parseDouble(input.nextLine());
-        System.out.print("What is the state? ");
-        String state = input.nextLine();
+        // setup correct password
+        String correctPassword = "abc$123";
 
-        // output
-        System.out.print("The subtotal is $" + String.format("%.2f", order_amount) + ".");
+        // record password
+        System.out.print("What is the password? ");
+        String enteredPassword = input.nextLine();
 
-        // calculate total
-        double tax = order_amount * (.01 * 5.5);
-        double total = order_amount + tax;
-
-        // calculate total
-        if (state.toUpperCase().equals("WI")) System.out.print("\n" + "The tax is $" + tax + "." + "\n" + "The total is $" + total + ".");
+        // output result
+        if (correctPassword.equals(enteredPassword))
+            System.out.print("Welcome!");
+        else
+            System.out.print("I don't know you.");
     }
 }
